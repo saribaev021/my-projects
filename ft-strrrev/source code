@@ -1,0 +1,41 @@
+#include <stdio.h>
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while(str[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
+}
+char *ft_strrev(char *str)
+{
+    int length = ft_strlen(str) - 1;
+    int i = 0;
+    char c;
+    while(i < length / 2)
+    {
+        c = str[i];
+        str[i] = str[length  - i];
+        str[length  - i] = c;
+        i++;
+    }
+    //str[i] = '\0';
+    return (str);
+}
+
+int main()
+{
+    int i = 0;
+    char c[] = "123456789";
+    ft_strrev(c);
+    printf("String = %s", c);
+    /*
+    while(s[i] != '\0')
+    {
+        printf("%c", s[i]);
+        i++;
+    }
+    */
+    return 0;
+}
